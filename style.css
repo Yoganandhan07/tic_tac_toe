@@ -1,0 +1,110 @@
+body{
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right top,purple,#86a8e7,#91eae4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+}
+
+.game-container
+{
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    text-align: center;
+    border-radius: 16px;
+}
+
+h1{
+    margin-bottom: 10px;
+    font-size: 40px;
+
+}
+
+.turn-indicator{
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    background-color: rgba(225, 225, 225, 0.1);
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.board{
+    display: grid;
+    grid-template-columns: repeat(3,100px);
+    gap:10px;
+    margin: 20px auto;
+}
+
+.cell
+{
+    width: 100px;
+    height: 100px;
+    background-color: #ffffff;
+    border-radius:10px;
+    font-size:40px;
+    color:#333;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    cursor:pointer;
+    transition: transform o.2s,box-shadow,0.2s;
+
+}
+
+.cell:hover{
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px  rgba(0, 0, 0, 0.2);
+
+
+}
+
+.cell.winning{
+    background-color: rgb(93, 204, 93);
+    color:#fff;
+    animation: flash 0.8s infinite;
+
+}
+
+.cell.losing{
+    background-color: rgb(247, 24, 24);
+    color:#fff;
+    animation: flash 0.8s infinite;
+
+}
+
+
+
+
+@keyframes flash{
+    0%, 100%{ box-shadow: 0 0 10px #fff;}
+    50%{ box-shadow: 0 0 20px  rgb(93, 204, 93);}
+
+}
+
+#status{
+    font-size: 1.3rem;
+    margin-top: 10px;
+    min-height: 30px;
+}
+
+#reset{
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 10px;
+    background-color: #2196f3;
+    color:white;
+    cursor: pointer;
+    transition: background 0.2s;
+
+}
+
+#reset:hover{
+    background-color: white;
+    color:purple;
+}
